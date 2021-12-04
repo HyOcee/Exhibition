@@ -22,10 +22,22 @@ body {
     line-height: 1.2;
 }
 
+.h3, h3 {
+    font-size: calc(2.5rem + .6vw);
+}
+
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+}
+
 nav {
   background-color: #50255e;
   height: 7rem;
-  padding: 1.5rem 0px 0px 6rem;
+  padding: 1.5rem 0px 0px 10%;
   font-size: 3rem;
   color: white;
 }
@@ -34,51 +46,74 @@ section, .container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    color: rgb(133, 8, 123);
 }
 
 @media only screen and (max-width: 600px){
   .col-1 {width: 100%;}
-  .colText { padding: 50px 20px 0px;}
+  .col-1 img {width: 90%;}
+  section {padding: 10% 5% 0px 5%;}
+  h2 {
+  font-size: calc(3.5rem + 0.6vw);
+  padding-bottom: calc(3rem + 0.6vw);
+  }
 }
 
 @media only screen and (min-width: 600px){
   .col-1 {width: 50%;}
-  .colText {  padding: 100px 3% 0px;}
-  .col-1 img {margin-top: 80px;}
+  section {padding: 10% 5% 0px 5%;}
+  h2 {
+  font-size: calc(3.5rem + 0.6vw);
+  padding-bottom: calc(1rem + 0.6vw);
+  }
 }
 
 @media only screen and (min-width: 768px){
-  .col-1 {width: 50%;}
-  .colText {  padding: 100px 5% 0px;}
-    .col-1 img {margin-top: 50px;}
+  .col-1 img {  margin-top: -15%;}
+  h2 {
+  font-size: calc(4rem + 0.6vw);
+  padding-bottom: calc(3rem + 1.6vw);
+  }
 }
 
 @media only screen and (min-width: 992px){
-  .col-1 {width: 50%;}
-    .col-1 img {margin-top: 30px;}
+
 }
 
 @media only screen and (min-width: 1200px){
-  .col-1 {width: 50%;}
+    section {padding: 10% 15% 0px 15%;}
 }
 
 img {
-    vertical-align: middle;
     width: 100%;
 }
 
-.colText p {
-    font-size: 1.8rem;
+ p {
+    font-size: calc(1.5rem + 0.6vw);
     color: black;
     margin: 0;
 }
 
-.colText h2 {
-    font-size: 5.5rem;
-    padding-bottom: 30px;
-    color: rgb(133, 8, 123);
+
+.colText hr {
+    width: 180px;
+    color: #85087B;
+    border: 2px solid #85087B;
 }
 
+.aboutMe {
+  padding-top: 3%;
+    text-align: justify;
+}
+
+.aboutMe button {
+    padding: 7px 20px;
+    color: white;
+    background-color: #85087B;
+    border: 1px solid #85087B;
+    margin: 20px 0;
+    border-radius: 10px;
+}
 
 #container {
   width: 400px;
