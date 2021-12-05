@@ -23,7 +23,7 @@ body {
 }
 
 .h3, h3 {
-    font-size: calc(2.5rem + .6vw);
+    font-size: calc(2.5rem + 0.6vw);
 }
 
 h2 {
@@ -45,29 +45,40 @@ section, .container {
     color: rgb(133, 8, 123);
 }
 
+.col-1 {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 600px){
-  .col-1 {width: 100%;}
-  .col-1 img {width: 90%; display: none;}
+  .colText {width: 55%;}
+  .colImg {width: 45%;}
   section {padding: 10% 5% 0px 5%;}
   h2 {
-  /*font-size: calc(3.5rem + 0.6vw);*/
+  font-size: calc(3.5rem + 0.6vw);
   padding-top:  calc(1.5rem + 0.6vw);
   padding-bottom: calc(1.5rem + 0.6vw);
   }
 }
 
 @media only screen and (min-width: 600px){
-  .col-1 {width: 50%;}
+  .colText {width: 55%;}
+  .colImg {width: 45%;}
   section {padding: 10% 5% 0px 5%;}
   h2 {
-  /*font-size: calc(3.5rem + 0.6vw);*/
-  padding-top:  calc(1.9rem + 0.6vw);
-  padding-bottom: calc(1.9rem + 0.6vw);
+  font-size: calc(3.5rem + 0.6vw);
+  padding-top:  calc(1rem + 0.5vw);
+  padding-bottom: calc(1rem + 0.5vw);
   }
 }
 
 @media only screen and (min-width: 768px){
-  .col-1 img {  margin-top: -15%;}
+    .colText {width: 55%;}
+  .colImg {width: 45%;}
+  /*.col-1 img {  margin-top: -15%;}*/
+    section {padding: 10% 10% 0px 10%;}
   h2 {
   /*font-size: calc(4rem + 0.6vw);*/
   padding-top:  calc(3rem + 0.6vw);
@@ -103,7 +114,7 @@ img {
     text-align: justify;
 }
 
-.aboutMe h2 {
+.aboutMe h3 {
   text-align: center;
 }
 
