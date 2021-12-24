@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>My Mail App</title>
+</head>
+<body>
+	<div class="homePage">
+		<h1>H3LLO WURLD</h1>
+		<h2>Welcome to <em>Hy Mail</em></h2>
+		<div>
+			<div class="homePageInput">
+				<p>Username:</p> 
+				<input class="input_one" id='signInUsername' name="username" required>
+			</div>
+			<div class="homePageInput">
+				<p>Password:</p>
+				<input class="input_one" id='signInPassword' type="password" name="password">
+			</div>
+			
+			<div class="homePageSign">
+				<button onclick="signInFunction()"> Sign In</button>
+				<p id="signInError"></p>
+			</div>
+		</div>
+	
+	
+	<br><br><br><br>
+	
+	
+		<div>
+			<div class="homePageInput">
+				<p>First Name:</p> 
+				<input id='signUpFirstName' class="input_one" type="text"  name="firstname" required></div>
+			
+			<div class="homePageInput">
+				<p>Last Name:</p> 
+				<input id='signUpLastName' class="input_one" type="text"  name="lastname" required></div>
+		
+			<div class="homePageInput">
+				<p>Username:</p>
+				<input id='signUpUsername' class="input_one"  name="username" required></div>
+			
+			<div class="homePageInput">
+				<p>Password:</p>
+				<input id='signUpPassword' class="input_one"  type="password" min="6" name="password"></div>
+		
+			<div class="homePageSign">
+			<button onclick="signUpFunction()">Register!</button>
+				<p id="signUpError"></p>
+			</div>
+		</div>
+	</div>
+	
+<script src="script.js"></script>
+</body>
+</html>

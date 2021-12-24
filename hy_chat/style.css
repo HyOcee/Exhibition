@@ -1,0 +1,525 @@
+html {
+	font-size: 62.5%;
+}
+body {
+	color:  #446025b0;
+	margin: 0;
+	font-size: 1.6rem;
+	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+
+#header {
+	width: 100%;
+	display: flex;
+	height: 6.4rem;
+	padding: 0.8rem;
+	box-sizing: border-box;
+	border: none;
+	box-shadow: 0 0px 0px 0 rgb(60 64 67 / 30%), 0 0px 0px 1px rgb(60 64 67 / 15%);
+}
+
+.header_icons{
+	opacity: 0.8;
+	background-color: inherit;
+	border: none;
+	border-radius: 50%;
+	height: 4rem;	
+	width: 4rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	position: relative;
+	left: 0.3rem;
+}
+.header_icons:hover {
+	background-color: #e8eaed;
+}
+
+.header_logo{
+	width: 18.2%;
+	display: flex;
+	position: relative;
+	top: 0.5rem;
+	left: -0.5rem;
+}
+
+#search {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.header_search_bar{
+	box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+	width: 50.3%;
+	margin-right: 18.5%;
+	height: 4.6rem;
+	right: rem;
+	display: flex;
+	align-items: center;
+	border-radius: 0.8rem;
+}
+
+.headerRight {
+	opacity: 0.6;
+	background-color: inherit;
+	border: none;
+	border-radius: 50%;
+	height: 4rem;	
+	width: 4rem;
+	position: relative;
+	top: 0.9rem;
+}
+.headerRight:hover {
+	background-color: #e8eaed;
+}
+
+#accountOwner {
+    font-size: 30px;
+    line-height: 1;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+}
+
+#id {
+	width: 64rem;
+	border: none;
+	background-color: inherit;
+	height: 100%;
+}
+
+
+
+#menu {
+	box-sizing: border-box;
+	padding-left: 0;
+	width: 22%;
+}
+#compose {
+	display: flex;
+	align-items: center;
+	height: 4.8rem;
+	margin: 1.6rem 0;
+	width: 14.4rem;
+	position: relative;
+	left: 1.5rem;
+	border-radius: 24px;
+	background-color: inherit;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+#compose:hover {
+	background-color: #fafafb;
+	box-shadow: 0 1px 3px  0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+
+}
+
+#compose div{
+	margin-left: 0.9rem;
+	font-size: 1.3rem;
+	font-weight: 500;
+    letter-spacing: .25px;
+	font-family: 'Google Sans', Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+
+button img {
+	position: relative;
+	margin-left: 0.5rem;
+	margin-right: 0.4rem;
+}
+
+
+#everything {
+	display: flex;
+}
+#main {
+	width: 100%;
+}
+ul {
+	font-size: 1.4rem;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+li a {
+	padding-left: 2.4rem;
+	color: inherit;
+	display: flex;
+	align-items: center;
+	/*padding: ;*/
+	height: 3.2rem;
+	text-decoration: none;
+	cursor: pointer;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+
+li a.active {
+	background-color: #d930251a;
+	color: #d93025;
+	font-weight: bold;
+}
+
+li a:hover:not(.active) {
+	background-color: #f3f3f3;
+}
+
+li a p {
+	margin-left: 2rem;
+}
+
+#labels{
+	display: none;
+}
+
+#menu1 {
+	height: 185px;
+	overflow: auto;
+}
+
+
+#meet {
+	height: 110px;
+	box-shadow: 0px -2px 2px -1px rgb(0 0 0 / 10%);
+	
+}
+
+#menu4:hover .kontent{
+	display: block;
+}
+
+.kontent {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 16rem;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(58 98 33 / 55%); 
+  -webkit-box-shadow: inset 1px 1px 0px rgb(0 0 0 / 10%), 
+  								inset 0px -1px 0px rgb(0 0 0 / 7%); 
+}
+
+section {
+	padding-top: 5px;
+}
+
+#main_top{
+	display: none;
+	width: 100%;
+	height: 50px;border: none;
+	-webkit-box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+}
+
+.mailContainer {
+	display: flex;
+	background: rgba(242,245,245,0.8);
+	box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+	width: 100%;
+	height: 4rem;
+	padding: 1rem 1.5rem;
+	box-sizing: border-box;
+}
+
+.mailContainer_Read {
+	background: white;
+	display: flex;
+	box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+	width: 100%;
+	height: 4rem;
+	padding: 1rem 1.5rem;
+	box-sizing: border-box;
+}
+
+.mailContainer:hover {
+	box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 
+							0 1px 2px 0 rgb(60 64 67 / 30%), 
+							0 1px 3px 1px rgb(60 64 67 /15%);
+	z-index: 2;
+}
+
+.mailContainer_Read:hover {
+	box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 
+						0 1px 2px 0 rgb(60 64 67 / 30%), 
+						0 1px 3px 1px rgb(60 64 67 /15%);
+	z-index: 2;
+}
+
+
+.mailContainer_i {
+	position: relative;
+	left: -1rem;
+	top: -1rem;
+	background-color: inherit;
+	border: none;
+	border-radius: 50%;
+	height: 3.8rem;	
+	width: 3.8rem;
+	overflow: hidden;
+	color: inherit;
+}
+
+.mailContainer_ii {
+	position: relative;
+	left: -2rem;
+	top: -1rem;
+	background-color: inherit;
+	border: none;
+	border-radius: 50%;
+	height: 3.8rem;	
+	width: 3.8rem;
+	overflow: hidden;
+	color: inherit;
+}
+.mailContainer_iii {
+	position: relative;
+	left: -3rem;
+	top: -1rem;
+	background-color: inherit;
+	border: none;
+	border-radius: 50%;
+	height: 3.8rem;	
+	width: 3.8rem;
+	overflow: hidden;
+	color: inherit;
+}
+
+.mailContainer_i:hover {
+	background-color: #e8eaed;
+	z-index: 11;
+
+}
+.mailContainer_ii:hover {
+	background-color: #e8eaed;
+	z-index: 11;
+}
+.mailContainer_iii:hover {
+	background-color: #e8eaed;
+	z-index: 11;
+}
+
+.sender {
+	width: 20rem;
+	position: relative;
+	left: -2rem;
+	overflow: hidden;
+	text-align: center;
+}
+
+.mailContent {
+	width: 67.8rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mailTime {
+	overflow: hidden;
+
+}
+
+.homePage {
+	color:  #446025b0;
+	border-radius: 10px;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 50px;
+	padding: 20px 5% ;
+	box-shadow: 0 0px 0px 0 rgb(60 64 67 / 30%), 0 0px 0px 1px rgb(60 64 67 / 15%);
+}
+
+.homePage h1 {
+	margin: 0;
+	text-align: center;
+	
+}
+
+.homePage h2 {
+	text-align: center;
+	
+}
+
+.homePage div {
+	width: 100%;
+}
+
+.homePageInput {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+
+}
+
+.homePageInput p {
+	width: 120px;
+	margin-right: 50px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.homePageInput input {
+	width: 100%;
+	height: 25px;
+}
+
+.homePageSign {
+	display: flex;
+	align-items: center;
+}
+
+.homePageSign button {
+	color: rgb(60 64 67 / 80%);
+	height: 3rem;
+	width: 10rem;
+	background-color: inherit;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+	margin-right: 30px;
+}
+
+.homePageSign p {
+	text-align: center;
+	width: 100%;
+	margin: 0;
+}
+
+.sendMailBox {
+	margin-left: 10%;
+  margin-top: 25px;
+  width: 25%;
+}
+
+.recepient input {
+	width: 97%;
+	height: 30px;
+}
+
+#sendMailError {
+	height: 20px;
+}
+
+::placeholder { 
+  color: inherit;
+  opacity: 0.8; 
+}
+
+.message textarea {
+	height: 80px;
+	width: 97%;
+}
+
+#profile {
+	display: none;
+	height: 450px;
+	position: absolute;
+	right: 10px;
+	top: 70px;
+	border-radius: 10px;
+	background-color: white;
+	width: 330px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+#profile .profilePicture {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: tomato;
+}
+
+#profile h1 {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#profile h2 {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	overflow: hidden;
+}
+
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+/*section, html {
+  height: 100%
+}*/
+
+.bgimg {
+  /* Background image */
+  background-image: url('https://w3images/forestbridge.jpg');
+  /* Full-screen */
+  height: 100%;
+  /* Center the background image */
+  background-position: center;
+  /* Scale and zoom in the image */
+  background-size: cover;
+  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+  position: relative;
+  /* Add a white text color to all elements inside the .bgimg container */
+  color: inherit;
+  /* Add a font */
+  font-family: "Courier New", Courier, monospace;
+  /* Set the font-size to 25 pixels */
+  font-size: 25px;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+/* Position text in the bottom-left corner */
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the <hr> element */
+hr {
+  margin: auto;
+  width: 40%;
+}
