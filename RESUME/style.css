@@ -1,7 +1,10 @@
-body {
-    padding-right: 10%;
-    padding-left: 10%;
+@media only screen and (max-width: 600px) {
+    body {
+        padding-right: 1%;
+        padding-left: 10%;
+    }
 }
+
 
 p, h1, h2 {
     margin: 0;
