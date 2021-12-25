@@ -8,7 +8,6 @@ body {
 	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
-
 #header {
 	width: 100%;
 	display: flex;
@@ -522,4 +521,12 @@ section {
 hr {
   margin: auto;
   width: 40%;
+}
+
+
+@media only screen and (max-width: 600px) {
+		.homePage {
+			margin-left: 5%;
+			margin-right: 5%;
+		}
 }
