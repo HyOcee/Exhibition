@@ -375,21 +375,23 @@ section {
 
 .homePageInput {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 5px;
 
 }
 
-.homePageInput p {
-	width: 120px;
-	margin-right: 50px;
-	margin-top: 0;
-	margin-bottom: 0;
-}
 
 .homePageInput input {
-	width: 100%;
+	width: 50%;
 	height: 25px;
+}
+
+@media only screen and (min-width: 600px){
+	.homePageInput input {
+	width: 70%;
+	height: 25px;
+}
 }
 
 .homePageSign {

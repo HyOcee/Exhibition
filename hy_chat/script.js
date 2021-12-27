@@ -1,5 +1,6 @@
 const showSignUpForm = () => {
 	document.querySelector('.signUpForm').style.display = 'block';
+	document.querySelector('#disappear').innerHTML = '<br>';
 }
 
 const fetchMails = (usernameRequest) => {

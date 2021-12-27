@@ -15,11 +15,11 @@
 		<h2>Welcome to <em>Hy Chat</em></h2>
 		<div>
 			<div class="homePageInput">
-				<p>Username:</p> 
+				<label>Username:</label> 
 				<input class="input_one" id='signInUsername' name="username" required>
 			</div>
 			<div class="homePageInput">
-				<p>Password:</p>
+				<label>Password:</label>
 				<input class="input_one" id='signInPassword' type="password" name="password">
 			</div>
 			
@@ -28,28 +28,28 @@
 				<p id="signInError"></p>
 			</div>
 		</div>
-	<p>Don't have an account yet? <a class="clickHere" onclick="showSignUpForm()">Click here</a> to sign up</p>
+	<p id="disappear">Don't have an account yet? <a class="clickHere" onclick="showSignUpForm()">Click here</a> to sign up</p>
 	
 	
 		<div class="signUpForm">
 			<div class="homePageInput">
-				<p>First Name:</p> 
+				<label>First Name:</label> 
 				<input id='signUpFirstName' class="input_one" type="text"  name="firstname" required></div>
 			
 			<div class="homePageInput">
-				<p>Last Name:</p> 
+				<label>Last Name:</label> 
 				<input id='signUpLastName' class="input_one" type="text"  name="lastname" required></div>
 		
 			<div class="homePageInput">
-				<p>Username:</p>
+				<label>Username:</label>
 				<input id='signUpUsername' class="input_one"  name="username" required></div>
 			
 			<div class="homePageInput">
-				<p>Password:</p>
+				<label>Password:</label>
 				<input id='signUpPassword' class="input_one"  type="password" min="6" name="password"></div>
 		
 			<div class="homePageSign">
-			<button onclick="signUpFunction()">Register!</button>
+			<button onclick="signUpFunction()">Sign Up</button>
 				<p id="signUpError"></p>
 			</div>
 		</div>

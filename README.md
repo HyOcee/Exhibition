@@ -1,5 +1,6 @@
 # Exhibition
 
+<i class="fa fa-instagram" aria-hidden="true"></i><span> - Instagram</span>
 
 @media only screen and (min-width: 600px){
   .col-1 {width: 50%;}
