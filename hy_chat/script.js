@@ -1,3 +1,7 @@
+const showSignUpForm = () => {
+	document.querySelector('.signUpForm').style.display = 'block';
+}
+
 const fetchMails = (usernameRequest) => {
 				fetch('http://127.0.0.1:3000/mails', {
 			  method: "POST",

@@ -8,6 +8,15 @@ body {
 	font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
+.signUpForm {
+	display: none;
+}
+
+.clickHere {
+	cursor: pointer;
+	color: #227ecd;
+}
+
 #header {
 	width: 100%;
 	display: flex;
