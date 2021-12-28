@@ -25,7 +25,7 @@ header {
 
 #content {
       background-image: linear-gradient(to bottom right, #b1b1b1, #443838);
- }
+}
 
 *, ::after, ::before {
     box-sizing: border-box;
@@ -270,7 +270,6 @@ ul li:hover:nth-child(5) a:after{
 }
 
 .footer hr {
-  color: #353138;
   margin-bottom: 5%;
 }
 
@@ -372,7 +371,7 @@ ul li:hover:nth-child(5) a:after{
 
   #Home img {
   width: 130px;
-  height: 140px;
+  height: 130px;
   border: 5px solid #7e7d7d;
   border-radius: 50%;
   margin: 2%;
@@ -405,4 +404,37 @@ ul li:hover:nth-child(5) a:after{
   height: 50px;
   position: absolute;
   background-color: red;
+}
+
+body {
+    color: #484848;
+ }
+
+header {
+  background-color: #d5d5d5;
+  color: #484848;
+}
+
+#content {
+  background-image: linear-gradient(to bottom right, white, #b1b1b1);
+ }
+
+#Home img {
+  border: 5px solid #b5aeae;
+}
+
+input, textarea {
+  background-color: #e7e7e7;
+}
+
+ul li .fab {
+  color: #363636;
+}
+
+ul li:hover .fab {
+  color:#fff;
+}
+
+ul li a {
+  background: #b1b1b1;
 }
