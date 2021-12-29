@@ -82,7 +82,9 @@ section {
 #Home img {
   width: 400px;
   height: 400px;
-  border: 10px solid #7e7d7d;
+  border: solid;
+  border-width: 10px;
+  border-color: #7e7d7d;
   border-radius: 50%;
   margin: 5%;
 }
@@ -306,8 +308,7 @@ ul li:hover:nth-child(5) a:after{
   #Home img {
   width: 130px;
   height: 130px;
-  border: 5px solid #7e7d7d;
-  border-radius: 50%;
+  border-width: 5px;
   margin: 2%;
   position: absolute;
   top: 8%;
@@ -372,8 +373,6 @@ ul li:hover:nth-child(5) a:after{
   #Home img {
   width: 130px;
   height: 130px;
-  border: 5px solid #7e7d7d;
-  border-radius: 50%;
   margin: 2%;
   position: absolute;
   top: 10%;

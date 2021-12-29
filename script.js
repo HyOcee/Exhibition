@@ -10,9 +10,9 @@ const iconsBackground = document.querySelector('ul li a');
 function dark() {
   body.style.color = '#353138';
   header.style.color = '#d5d5d5';
-  header.style.backgroundcolor = '#484848';
+  header.style.backgroundColor = '#484848';
   content.style.backgroundImage = 'linear-gradient(to bottom right, #b1b1b1, #443838)';
-  homeImg.style.border = '10px solid #7e7d7d';
+  homeImg.style.borderColor = '#7e7d7d';
   input_texearea.forEach(each => {
     each.style.backgroundColor = '#8d8a8a';
   })
@@ -24,9 +24,9 @@ function dark() {
 function darkish() {
   body.style.color = '#484848';
   header.style.color = '#fff';
-  header.style.backgroundcolor = '#d5d5d5';
+  header.style.backgroundColor = '#d5d5d5';
   content.style.backgroundImage = 'linear-gradient(to bottom right, white, #b1b1b1)';
-  homeImg.style.border = '5px solid #b5aeae';
+  homeImg.style.borderColor = '#b5aeae';
   input_texearea.forEach(each => {
     each.style.backgroundColor = '#e7e7e7';
   })
@@ -38,9 +38,9 @@ function darkish() {
 function light() {
   body.style.color = '#484848';
   header.style.color = 'white';
-  header.style.backgroundcolor = '#484848';
+  header.style.backgroundColor = '#484848';
   content.style.backgroundImage = 'linear-gradient(to bottom right, white, white)';
-  homeImg.style.border = '5px solid #b5aeae';
+  homeImg.style.borderColor = '#b5aeae';
   input_texearea.forEach(each => {
     each.style.backgroundColor = '#f3efef';
   })
