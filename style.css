@@ -338,7 +338,7 @@ ul li:hover:nth-child(5) a:after{
     .contactNotes {
       margin: 1% auto;
       width: 75%;
-      padding: 5% 10% 5% 1%;
+      padding: 5% 2.5% 5% 1%;
     }
 
     input, textarea {
@@ -429,6 +429,39 @@ input, textarea {
 
 ul li .fab {
   color: #363636;
+}
+
+ul li:hover .fab {
+  color:#fff;
+}
+
+ul li a {
+  background: #b1b1b1;
+}
+
+body {
+    color: #484848;
+ }
+
+header {
+  background-color: #484848;
+  color: white;
+}
+
+#content {
+  background-image: linear-gradient(to bottom right, white, white);
+ }
+
+#Home img {
+  border: 5px solid #b5aeae;
+}
+
+input, textarea {
+  background-color: #f3efef;
+}
+
+ul li .fab {
+  color: #f3efef;
 }
 
 ul li:hover .fab {
