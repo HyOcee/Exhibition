@@ -4,35 +4,35 @@ const showSignUpForm = () => {
 }
 
 const fetchMails = (usernameRequest) => {
-				fetch('http://127.0.0.1:3000/mails', {
-			  method: "POST",
-			  headers: {
-				      Accept: "application/json, text/plain, /",
-				      "Content-Type": "application/json",
-				    },
-			  body: JSON.stringify({
-			    		username: usernameRequest
-							})		    
-				})
-			  .then(response => response.json())
-				.then(mails => {
-					document.querySelector('#inboxLink').className = 'active';
-					document.querySelector('#starredLink').className = '';
-					document.querySelector('#comingSoon').className = '';
-					mails.forEach(eachMail => {
-						if (eachMail.read === true){
-							mailClass = 'mailContainer_Read';
-						} else {
-							mailClass = 'mailContainer';
-						};
-						if (eachMail.starred === true){
-							starIcon = 'star';
-						} else {
-							starIcon = 'star_border';
-						}
-						document.querySelector('section').innerHTML = 
-						document.querySelector('section').innerHTML + 
-							`	<div class='${mailClass}' id='mail${eachMail.mailid}'>
+	fetch('https://127.0.0.1', {
+		method: "POST",
+		headers: {
+			Accept: "application/json, text/plain, /",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			username: usernameRequest
+		})
+	})
+		.then(response => response.json())
+		.then(mails => {
+			document.querySelector('#inboxLink').className = 'active';
+			document.querySelector('#starredLink').className = '';
+			document.querySelector('#comingSoon').className = '';
+			mails.forEach(eachMail => {
+				if (eachMail.read === true) {
+					mailClass = 'mailContainer_Read';
+				} else {
+					mailClass = 'mailContainer';
+				};
+				if (eachMail.starred === true) {
+					starIcon = 'star';
+				} else {
+					starIcon = 'star_border';
+				}
+				document.querySelector('section').innerHTML =
+					document.querySelector('section').innerHTML +
+					`	<div class='${mailClass}' id='mail${eachMail.mailid}'>
 									<button class="mailContainer_i" onclick="selectMail('${eachMail.mailid}')">
 										<i class="material-icons">check_box_outline_blank</i>
 									</button>	
@@ -49,36 +49,36 @@ const fetchMails = (usernameRequest) => {
 									<div class='mailContent' onclick="changeReadStatus(${eachMail.mailid},
 											'${usernameRequest}')">${eachMail.mailcontent}</div>
 								</div> `
-					})
-				})
-			}
+			})
+		})
+}
 
 function fetchMailsStarred(usernameRequest) {
-		fetch('http://127.0.0.1:3000/mails', {
-	  method: "POST",
-	  headers: {
-		      Accept: "application/json, text/plain, /",
-		      "Content-Type": "application/json",
-		    },
-	  body: JSON.stringify({
-	    		username: usernameRequest
-					})		    
+	fetch('https://127.0.0.1/mails', {
+		method: "POST",
+		headers: {
+			Accept: "application/json, text/plain, /",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			username: usernameRequest
 		})
-	  .then(response => response.json())
+	})
+		.then(response => response.json())
 		.then(mails => {
 			document.querySelector('#inboxLink').className = '';
 			document.querySelector('#starredLink').className = 'active';
 			mails.forEach(eachMail => {
-				if (eachMail.read === true){
+				if (eachMail.read === true) {
 					mailClass = 'mailContainer_Read';
 				} else {
 					mailClass = 'mailContainer';
 				};
-				if (eachMail.starred === true){
-					
-				document.querySelector('section').innerHTML = 
-				document.querySelector('section').innerHTML + 
-					`	<div class='${mailClass}' id='mail${eachMail.mailid}'>
+				if (eachMail.starred === true) {
+
+					document.querySelector('section').innerHTML =
+						document.querySelector('section').innerHTML +
+						`	<div class='${mailClass}' id='mail${eachMail.mailid}'>
 							<button class="mailContainer_i" onclick="selectMail('${eachMail.mailid}')">
 								<i class="material-icons">check_box_outline_blank</i>
 							</button>	
@@ -95,32 +95,32 @@ function fetchMailsStarred(usernameRequest) {
 							<div class='mailContent' onclick="changeReadStatus(${eachMail.mailid},
 									'${usernameRequest}')">${eachMail.mailcontent}</div>
 						</div> `
-					}
+				}
 			})
 		})
-	}
+}
 
 
 function changeReadStatus(mailID, user) {
-	fetch('http://127.0.0.1:3000/changeread', {
-	  		  method: "PUT",
-	  		  headers: {
-		     						Accept: "application/json, text/plain, /",
-		      					"Content-Type": "application/json",
-		   						},
-  		    body: 		JSON.stringify({
-  		    					mailID: mailID
-  		    				}),
-  		  		})
-  		    .then(response => response.json())
-  		    .then(data => {
-  		    	if (data === 1){
-  		    		document.querySelector(`#mail${mailID}`).className = 'mailContainer_Read';
-  		    	} else{
-  		    		document.querySelector(`#mail${mailID}`).className = 'mailContainer';
-  		    	}
-  		    })
-  		    .catch(err => console.log(err.body))
+	fetch('https://127.0.0.1/changeread', {
+		method: "PUT",
+		headers: {
+			Accept: "application/json, text/plain, /",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			mailID: mailID
+		}),
+	})
+		.then(response => response.json())
+		.then(data => {
+			if (data === 1) {
+				document.querySelector(`#mail${mailID}`).className = 'mailContainer_Read';
+			} else {
+				document.querySelector(`#mail${mailID}`).className = 'mailContainer';
+			}
+		})
+		.catch(err => console.log(err.body))
 }
 
 function selectMail(mailID) {
@@ -128,165 +128,220 @@ function selectMail(mailID) {
 }
 
 function changeStarredStatus(mailID, user) {
-	fetch('http://127.0.0.1:3000/changestar', {
-	  		  method: "PUT",
-	  		  headers: {
-		     						Accept: "application/json, text/plain, /",
-		      					"Content-Type": "application/json",
-		   						},
-  		    body: 		JSON.stringify({
-  		    					mailID: mailID
-  		    				}),
-  		  		})
-  		    .then(response => response.json())
-  		    .then(data => {
-  		    	if (data === 1){
-  		    		document.querySelector(`#star${mailID}`).innerHTML = `<i class="material-icons">star</i>`  		    	
-  		    	} else{
-  		    		document.querySelector(`#star${mailID}`).innerHTML = `<i class="material-icons">star_border</i>`
-  		    	}
-  		    })
-  		    .catch(err => console.log(err.body))
+	fetch('https://127.0.0.1/changestar', {
+		method: "PUT",
+		headers: {
+			Accept: "application/json, text/plain, /",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			mailID: mailID
+		}),
+	})
+		.then(response => response.json())
+		.then(data => {
+			if (data === 1) {
+				document.querySelector(`#star${mailID}`).innerHTML = `<i class="material-icons">star</i>`
+			} else {
+				document.querySelector(`#star${mailID}`).innerHTML = `<i class="material-icons">star_border</i>`
+			}
+		})
+		.catch(err => console.log(err.body))
 }
 
 function deleteMail(mailID, user) {
-	fetch('http://127.0.0.1:3000/delete', {
-	  		  method: "DELETE",
-	  		  headers: {
-		     						Accept: "application/json, text/plain, /",
-		      					"Content-Type": "application/json",
-		   						},
-  		    body: 		JSON.stringify({
-  		    					mailID: mailID,
-  		    					username: user
-  		    				}),
-  		  		})
-  		    .then(response => response.json())
-  		    .then(data => {
-  		    	console.log('deleting mails');
-  		    	document.querySelector(`#mail${mailID}`).style.display = `none`;
-  		    })
-  		    .catch(err => console.log(err.body))
+	fetch('https://127.0.0.1/delete', {
+		method: "DELETE",
+		headers: {
+			Accept: "application/json, text/plain, /",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			mailID: mailID,
+			username: user
+		}),
+	})
+		.then(response => response.json())
+		.then(data => {
+			console.log('deleting mails');
+			document.querySelector(`#mail${mailID}`).style.display = `none`;
+		})
+		.catch(err => console.log(err.body))
 }
 
 function signUpFunction() {
 	const form = {
-					firstName: document.querySelector('#signUpFirstName'),
-					lastName: document.querySelector('#signUpLastName'),
-				 	username: document.querySelector('#signUpUsername'),
-				  	password: document.querySelector("#signUpPassword"),
-				 
-			};
-		
-			if (form.username.value )  {
-				if (form.password.value){
-			  	fetch('http://127.0.0.1:3000/signup', {
-			  		  method: "POST",
-			  		  headers: {
-	  		     						Accept: "application/json, text/plain, /",
-	  		      					"Content-Type": "application/json",
-	  		   						},
-		  		    body: 		JSON.stringify({
-		  		    					firstName: form.firstName.value,
-		  		    					lastName: form.lastName.value,
-		  		      				username: form.username.value,
-		  		     					password: form.password.value
-		  		    				}),
-		  		  		})
-		  		    .then(response => response.json())
-		  		    .then(data => {
-		  		    	console.log(data)
-		  		    	if (data === true){
-		  		    		enterAccount(form.username.value);
-		  		    	} else {
-		  		    		document.querySelector('#signUpError').innerHTML = 'Username already taken'
-		  		    	}
-			  		 })
-			  		}	else{
-			  			document.querySelector('#signUpError').innerHTML = 'Alaye put password'
-			  		}} else{
-			  			document.querySelector('#signUpError').innerHTML = 'Guy you no go use username ni?'
-			  		}
+		firstName: document.querySelector('#signUpFirstName'),
+		email: document.querySelector('#signUpEmail'),
+		username: document.querySelector('#signUpUsername'),
+		password: document.querySelector("#signUpPassword"),
+
+	};
+
+	if (form.username.value) {
+		if (form.password.value) {
+			fetch('http://localhost:3000/signup', {
+				method: "POST",
+				headers: {
+					Accept: "application/json, text/plain, /",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					firstName: form.firstName.value,
+					email: form.email.value,
+					username: form.username.value,
+					password: form.password.value
+				}),
+			})
+				.then(response => response.json())
+				.then(data => {
+					console.log(data)
+					if (data === true) {
+						document.querySelector('body').innerHTML = 'welcome... pleasecheck your mail'
+					} else {
+						document.querySelector('body').innerHTML = 'failure'
+					}
+				})
+		} else {
+			document.querySelector('#signUpError').innerHTML = 'Alaye put password'
+		}
+	} else {
+		document.querySelector('#signUpError').innerHTML = 'Guy you no go use username ni?'
+	}
+}
+
+// if (JSON.parse(sessionStorage.getItem('login'))) {
+// 	username = JSON.parse(sessionStorage.getItem('login'))[0]
+// 	password = JSON.parse(sessionStorage.getItem('login'))[1]
+// 	fetch('http://127.0.0.1:3000/signin', {
+// 		method: "POST",
+// 		headers: {
+// 			Accept: "application/json, text/plain, /",
+// 			"Content-Type": "application/json",
+// 		},
+// 		body: JSON.stringify({
+// 			username,
+// 			password
+// 		}),
+// 	})
+// 		.then(response => response.json())
+// 		.then(data => {
+// 			if (data === 1) {
+// 				enterAccount(username);
+// 			}
+// 		})
+// }
+
+// web socket
+// let socket = new WebSocket("ws://127.0.0.1:8080");
+// socket.onopen = () => {
+// 	console.log('socket connected')
+//   }
+
+  function sendMessage() {
+	const mailForm = {
+		receiver: document.querySelector("#mailRecepient"),
+		mailContent: document.querySelector("#mailContent")
+	};
+	if (mailForm.receiver.value) {
+		if (mailForm.mailContent.value) {
+			let message = {
+				receiver: mailForm.receiver.value,
+				content: mailForm.mailContent.value
+			}
+			socket.send(JSON.stringify(message))
+		} else {
+			document.querySelector('#sendMailError').innerHTML = 'alas the message is empty'
+			document.querySelector('#clearError').style.display = 'block'
+		}
+	} else {
+		document.querySelector('#sendMailError').innerHTML = 'are you sending to a ghost?'
+		document.querySelector('#clearError').style.display = 'block'
+	}
 }
 
 function signInFunction() {
 	const form = {
-					username: document.querySelector('#signInUsername'),
-					password: document.querySelector('#signInPassword'),
-				};
-	if(form.username.value){
-		  fetch('http://127.0.0.1:3000/signin', {
-		    method: "POST",
-		    headers: {
-		     			Accept: "application/json, text/plain, /",
-		      					"Content-Type": "application/json",
-		   			},
-		    body: 		JSON.stringify({
-		    				username: form.username.value,
-		    				password: form.password.value
-		    		}),
-		  		})
-		    .then(response => response.json())
-		    .then(data => {
-		    	if (data === 1) {
-		    		enterAccount(form.username.value);
-		    	} else if (data === 2) {
-		    		document.querySelector('#signInError').innerHTML = 'Wrong Password'
-		    	} else {
-		    		document.querySelector('#signInError').innerHTML = `User doesn't exist`
-		    	}
-		    })	  		
+		username: document.querySelector('#signInUsername'),
+		password: document.querySelector('#signInPassword'),
+	};
+	if (form.username.value) {
+		fetch('https://hy-mail-server.herokuapp.com/signin', {
+			method: "POST",
+			headers: {
+				Accept: "application/json, text/plain, /",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				username: form.username.value,
+				password: form.password.value
+			}),
+		})
+			.then(response => response.json())
+			.then(data => {
+				if (data === 1) {
+					sessionStorage.setItem('login', JSON.stringify([form.username.value, form.password.value]))
+					enterAccount(form.username.value);
+				} else if (data === 2) {
+					document.querySelector('#signInError').innerHTML = 'Wrong Password'
+				} else {
+					document.querySelector('#signInError').innerHTML = `User doesn't exist`
+				}
+			})
 	} else {
 		document.querySelector('#signInError').innerHTML = 'Username field cannot be empty'
 	}
+	document.querySelector('body').innerHTML = 'please check your mail'
+
 }
 
 function composeMailFunction(senderUsername) {
-	
-	document.querySelector('section').innerHTML = 
+
+	document.querySelector('section').innerHTML =
 		` <div class='sendMailBox'>
 				<div class='recepient'><p>Recepient:</p> <input id='mailRecepient'></div>
 				<div class='message'><p>Message:</p>
 						<textarea placeholder="Type message.." id='mailContent' ></textarea></div>
 				<p id='sendMailError'></p>
-				<button onclick="sendMailFunction('${senderUsername}')" > Send</button><br><br>
+				<button onclick="sendMessage('${senderUsername}')" > Send</button><br><br>
 				<button onclick="clearError()" style='display: none' id='clearError'> No Vex</button>
 			</div>	`;
 }
 
 function sendMailFunction(senderUsername) {
-	
+
 	const mailForm = {
-						  receiver: document.querySelector("#mailRecepient"),
-						  mailContent: document.querySelector("#mailContent")
-						}; 
-		if (mailForm.receiver.value){ 
-		  if(mailForm.mailContent.value) {
-		  	fetch('http://127.0.0.1:3000/sendmail', {
-  				    method: "PUT",
-  				    headers: {
-  				      Accept: "application/json, text/plain, /",
-  				      "Content-Type": "application/json",
-  				    },
-  				    body: JSON.stringify({
-  							      receiver: mailForm.receiver.value,
-  							      mailContent: mailForm.mailContent.value,
-  							      sender: senderUsername,
-  							      starred: false,
-  							      read: false,
-  							      time: new Date()
-  							    })
-		  				 	}) 
-		  		    .then(response => response.json())
-		  		    .then(data => {
-		  		    	console.log(data)
-		  		    	enterAccount('${senderUsername}')
-		  		    }) 
-		  		  	.catch(err => document.querySelector('#sendMailError').innerHTML = 'error sending mail')
-		  	} else{
-		  		document.querySelector('#sendMailError').innerHTML = 'alas the message is empty'
-		  		document.querySelector('#clearError').style.display = 'block'
-		  	}}else {
+		receiver: document.querySelector("#mailRecepient"),
+		mailContent: document.querySelector("#mailContent")
+	};
+	if (mailForm.receiver.value) {
+		if (mailForm.mailContent.value) {
+			fetch('https://127.0.0.1/sendmail', {
+				method: "PUT",
+				headers: {
+					Accept: "application/json, text/plain, /",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					receiver: mailForm.receiver.value,
+					mailContent: mailForm.mailContent.value,
+					sender: senderUsername,
+					starred: false,
+					read: false,
+					time: new Date()
+				})
+			})
+				.then(response => response.json())
+				.then(data => {
+					console.log(data)
+					enterAccount('${senderUsername}')
+				})
+				.catch(err => document.querySelector('#sendMailError').innerHTML = 'error sending mail')
+		} else {
+			document.querySelector('#sendMailError').innerHTML = 'alas the message is empty'
+			document.querySelector('#clearError').style.display = 'block'
+		}
+	} else {
 		document.querySelector('#sendMailError').innerHTML = 'are you sending to a ghost?'
 		document.querySelector('#clearError').style.display = 'block'
 	}
@@ -370,52 +425,36 @@ function enterAccount(accountOwner) {
 		<i class="material-icons" style="font-size:20px">star_border</i></div></section></div>`
 
 
-			 fetchMails(accountOwner)
-		}
-	
+	//  fetchMails(accountOwner)
+}
+
 
 function showProfile() {
-	if (document.querySelector('#profile').style.display === ''){
+	if (document.querySelector('#profile').style.display === '') {
 		document.querySelector('#profile').style.display = 'block';
-			document.querySelector('#profile').innerHTML = 
-			
-				console.log('showing profile')
+		document.querySelector('#profile').innerHTML =
+
+			console.log('showing profile')
 	} else {
 		document.querySelector('#profile').style.display = '';
 		document.querySelector('#profile').innerHTML = '';
-			console.log('removed')
-	}		
+		console.log('removed')
+	}
 }
 
 function enterAccountStarred() {
-		document.querySelector('#inboxLink').className = '';
-		document.querySelector('#starredLink').className = 'active';
+	document.querySelector('#inboxLink').className = '';
+	document.querySelector('#starredLink').className = 'active';
 
 	document.querySelectorAll('#')
 }
-
-		txt = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. `
-		i = 0;
-		var speed = 50;
-		function typeWriter() {
-			  if (i < txt.length) {
-			    document.getElementById("search").innerHTML += txt.charAt(i);
-			    i++;
-			    setTimeout(typeWriter, speed);
-			  }
-			}
 
 const comingSoon = () => {
 	document.querySelector('#inboxLink').className = '';
 	document.querySelector('#starredLink').className = '';
 	document.querySelector('#comingSoon').className = 'active';
 
-	document.querySelector('section').innerHTML = 
+	document.querySelector('section').innerHTML =
 		`<div class="bgimg">
   				<div class="topleft">
     			<p>Logo</p>
@@ -430,33 +469,33 @@ const comingSoon = () => {
   		</div>
 	</div>`
 
-			// Set the date we're counting down to
-			var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-	
-			// Update the count down every 1 second
-			var x = setInterval(function() {
-	
-			  // Get todays date and time
-			  var now = new Date().getTime();
-	
-			  // Find the distance between now an the count down date
-			  var distance = countDownDate - now;
-	
-			  // Time calculations for days, hours, minutes and seconds
-			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-	
-			  // Display the result in an element with id="demo"
-			  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-			  + minutes + "m " + seconds + "s ";
-				console.log(0);
-			  // If the count down is finished, write some text
-			  if (distance < 0) {
-			    clearInterval(x);
-			    document.getElementById("demo").innerHTML = "EXPIRED";
-			  }
-			}, 1000);
-			
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function () {
+
+		// Get todays date and time
+		var now = new Date().getTime();
+
+		// Find the distance between now an the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Display the result in an element with id="demo"
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+			+ minutes + "m " + seconds + "s ";
+		console.log(0);
+		// If the count down is finished, write some text
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+
 }
